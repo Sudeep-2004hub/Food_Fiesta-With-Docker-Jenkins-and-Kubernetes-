@@ -81,7 +81,7 @@ The Continuous Integration pipeline automates the process of building and contai
 7. Tag the Docker image
 8. Push the Docker image to Docker Hub
 
-![Jenkins CI Pipeline](screenshot/jenkins-ci.png)
+![Jenkins CI Pipeline](./screenshot/jenkins-ci.png)
 
 ---
 
@@ -99,7 +99,7 @@ The Continuous Deployment pipeline is responsible for deploying the application 
 - Remove database when required
 - Execute post-deployment actions
 
-![Jenkins CD Pipeline](screenshot/jenkins-cd.png)
+![Jenkins CD Pipeline](./screenshot/jenkins-cd.png)
 
 ---
 
