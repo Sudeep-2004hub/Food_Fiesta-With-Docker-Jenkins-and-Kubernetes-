@@ -12,7 +12,7 @@ This project demonstrates how a Spring Boot application can be automatically bui
 
 ![Food Fiesta CI/CD Architecture](screenshot/food-fiesta-cicd-architecture.png)
 
-### Architecture Flow
+## 🔄 Complete CI/CD Flow
 
 ```text
 Developer
@@ -34,10 +34,11 @@ Kubernetes Cluster on AWS EC2
 Spring Boot Application
     ↓
 MySQL Database
+```
 
+### 🌐 Application Access
 
-Application access:
-
+```text
 User / Browser
       ↓
 Nginx Reverse Proxy
@@ -47,22 +48,24 @@ Kubernetes Service
 Spring Boot Application
       ↓
 MySQL Database
+```
 
+---
 
-🛠️ Technologies Used
-Java
-Spring Boot
-Maven
-Git & GitHub
-Jenkins
-Docker
-Docker Hub
-Kubernetes
-AWS EC2
-Nginx Reverse Proxy
-MySQL
-Linux
+## 🛠️ Technologies Used
 
+- Java
+- Spring Boot
+- Maven
+- Git & GitHub
+- Jenkins
+- Docker
+- Docker Hub
+- Kubernetes
+- AWS EC2
+- Nginx Reverse Proxy
+- MySQL
+- Linux
 
 ---
 
@@ -121,14 +124,19 @@ AWS Cloud
 ├── Kubernetes Control Plane (EC2)
 ├── Kubernetes Worker Node (EC2)
 └── Nginx Reverse Proxy (EC2)
+```
 
+![AWS EC2 Infrastructure](./screenshot/aws-ec2-instances.png)
 
-🌐 Nginx Reverse Proxy
+---
+
+## 🌐 Nginx Reverse Proxy
 
 Nginx is used as a reverse proxy and acts as the entry point for users accessing the Food Fiesta application.
 
-The request flow is:
+### Request Flow
 
+```text
 User / Browser
       ↓
 Nginx Reverse Proxy
@@ -138,36 +146,49 @@ Kubernetes Service
 Spring Boot Application
       ↓
 MySQL Database
-This separates public access from the internal Kubernetes infrastructure.
+```
 
+The Nginx Reverse Proxy forwards incoming client requests to the application running inside the Kubernetes cluster.
 
-🍽️ Food Fiesta Application
+---
 
+## 🍽️ Food Fiesta Application
 
+After successful CI/CD execution, the Food Fiesta application is deployed to Kubernetes and made accessible through the Nginx Reverse Proxy.
+
+![Food Fiesta Application](./screenshot/food-fiesta-application.png)
+
+---
+
+## 🔁 End-to-End DevOps Workflow
+
+```text
 Developer
     │
     ▼
 GitHub
     │
     ▼
-Jenkins CI
+Jenkins CI Pipeline
     │
     ├── Maven Build
-    ├── Docker Build
-    ├── Docker Tag
-    └── Docker Push
+    ├── Docker Image Build
+    ├── Docker Image Tag
+    └── Push to Docker Hub
     │
     ▼
 Docker Hub
     │
     ▼
-Jenkins CD
+Jenkins CD Pipeline
     │
     ▼
 Kubernetes Cluster on AWS EC2
     │
     ├── Spring Boot Application
+    │
     └── MySQL Database
+
 
 User / Browser
     │
@@ -179,8 +200,25 @@ Kubernetes Service
     │
     ▼
 Food Fiesta Application
+    │
+    ▼
+MySQL Database
+```
 
+---
 
+## 📸 Deployment Result
 
-After successful CI/CD execution, the Food Fiesta application is deployed to Kubernetes and made accessible through the Nginx Reverse Proxy.
+The Food Fiesta application is successfully:
 
+- Built using Maven
+- Containerized using Docker
+- Pushed to Docker Hub
+- Deployed using Jenkins CD
+- Orchestrated using Kubernetes
+- Hosted on AWS EC2
+- Accessed through an Nginx Reverse Proxy
+
+![Food Fiesta Application](./screenshot/food-fiesta-application.png)
+
+---
