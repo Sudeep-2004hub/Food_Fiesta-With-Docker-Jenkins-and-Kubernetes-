@@ -64,21 +64,3 @@ MySQL
 Linux
 
 
-### 4. Check the Preview
-
-Before committing, click **Preview**.
-
-The most important thing is that your architecture diagram appears under:
-
-> 🏗️ Project Architecture
-
-If you see the image correctly, the path is working.
-
-### 5. Commit the README
-
-Click **Commit changes...**
-
-Use this commit message:
-
-```text
-
